@@ -4,14 +4,14 @@ public class Item {
     private int id;
     private String name;
 
-    public Item() {
+    public Item() { // конструктор без параметров
     }
 
-    public Item(String name) {
+    public Item(String name) { // конструктор с одним параметром
         this.name = name;
     }
 
-    public Item(int id, String name) {
+    public Item(int id, String name) { // конструктор с двумя параметрами
         this.name = name;
         this.id = id;
     }
