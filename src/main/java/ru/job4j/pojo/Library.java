@@ -2,15 +2,11 @@ package ru.job4j.pojo;
 
 public class Library {
     public static void main(String[] args) {
-        Book first = new Book("Novel", 20);
-        Book second = new Book("Marvel", 30);
-        Book third = new Book("Detective", 10);
-        Book fourth = new Book("Clean Code", 35);
         Book[] books = new Book[4];
-        books[0] = first;
-        books[1] = second;
-        books[2] = third;
-        books[3] = fourth;
+        books[0] = new Book("Novel", 20);
+        books[1] = new Book("Marvel", 30);
+        books[2] = new Book("Detective", 10);
+        books[3] = new Book("Clean Code", 35);
         for (Book pr : books) {
             System.out.println(pr.getName() + " количество страниц:" + pr.getPages());
         }
@@ -29,3 +25,5 @@ public class Library {
         }
     }
 }
+
+
