@@ -19,11 +19,13 @@ public class Library {
         }
         System.out.println();
         for (Book pr : books) {
-            if (pr.getName().equals("Clean code")) {
+            if ("Clean code".equals(pr.getName())) {
                 System.out.println(pr.getName() + "количество страниц:" + pr.getPages());
             }
         }
     }
 }
+
+
 
 
