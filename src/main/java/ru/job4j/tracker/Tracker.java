@@ -58,6 +58,9 @@ import java.util.Arrays;
              item.setId(id);
              items[index] = item;
              return true;
+         }else{
+             System.out.println("ID not found");
+
          }
          return false;
      }
@@ -69,6 +72,8 @@ import java.util.Arrays;
              items[size - 1] = null;
              size--;
              return true;
+         }else{
+             System.out.println("ID not found");
          }
          return false;
      }
