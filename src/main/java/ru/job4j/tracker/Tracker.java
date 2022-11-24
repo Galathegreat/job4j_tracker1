@@ -32,7 +32,6 @@ import java.util.Arrays;
          Item[] rsl = new Item[size];
          int count = 0;
          for (int i = 0; i < size; i++) {
-             Item item = items[i];
              if (key.equals(items[i].getName())) {
                  rsl[count] = items[i];
                  count++;
@@ -58,7 +57,7 @@ import java.util.Arrays;
              item.setId(id);
              items[index] = item;
              return true;
-         }else{
+         } else {
              System.out.println("ID not found");
 
          }
@@ -72,10 +71,14 @@ import java.util.Arrays;
              items[size - 1] = null;
              size--;
              return true;
-         }else{
+         } else {
              System.out.println("ID not found");
          }
          return false;
+     }
+
+     public Item[] findAll() {
+         return Arrays.copyOf(items, size);
      }
  }
 

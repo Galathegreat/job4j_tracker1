@@ -25,7 +25,6 @@ public class Matches {
         } else {
             System.out.println("Выиграл второй игрок");
         }
-
     }
 }
 
