@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.extractProperty;
 
 class StartUITest {
 
@@ -32,16 +31,13 @@ class StartUITest {
     }
 
     @Test
-    public void deleteItem() {
+    public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item item = tracker.add(new Item("deleted item"));
-        String [] answers = {
-                String.valueOf(item.getId()),
-                "deleted item"
-        };
-        StartUI.editItem(new StubInput(answers), tracker);
-        Item edited = tracker.findById(item.getId());
-        assertThat(edited).isNull();
-
-        }
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {String.valueOf(item.getId())};
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        Item deleted = tracker.findById(item.getId());
+        assertThat(deleted).isEqualTo(null);
     }
+}
