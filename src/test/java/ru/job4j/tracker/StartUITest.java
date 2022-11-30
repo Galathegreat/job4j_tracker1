@@ -18,6 +18,7 @@ class StartUITest {
         new StartUI().init(in, tracker, actions);
         assertThat(tracker.findAll()[0].getName()).isEqualTo("Item name");
     }
+
     @Test
     public void whenReplaceItem() {
         Tracker tracker = new Tracker();
@@ -25,7 +26,7 @@ class StartUITest {
         String replacedName = "New item name";
         String id = String.valueOf(item.getId());
         Input in = new StubInput(
-                new String[] {"0", id, replacedName,"1"}
+                new String[] {"0", id, replacedName, "1"}
         );
         UserAction[] actions = {
                 new EditItem(),
