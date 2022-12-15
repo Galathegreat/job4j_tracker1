@@ -14,7 +14,7 @@ public class ExitItem implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("=== Exit programme ===");
+        out.println("=== Exit programme ===");
         return false;
     }
 }

@@ -66,9 +66,11 @@ class StartUITest {
                 new ExitItem(out)
         };
         new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
         assertThat(out.toString()).isEqualTo(
                 "Menu:" + System.lineSeparator()
                         + "0. Exit programme" + System.lineSeparator()
+                        + "=== Exit programme ===" + ln
         );
     }
 
@@ -96,6 +98,7 @@ class StartUITest {
                         + "Menu:" + ln
                         + "0. Edit Item" + ln
                         + "1. Exit programme" + ln
+                        + "=== Exit programme ===" + ln
         );
     }
 
@@ -122,6 +125,7 @@ class StartUITest {
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit programme" + ln
+                        + "=== Exit programme ===" + ln
         );
     }
 
@@ -130,23 +134,24 @@ class StartUITest {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Find Item by mane"));
-        Input in = new StubInput(new String[] {"0", String.valueOf(item.getName()), "1"}
+        Input in = new StubInput(new String[] {"0", (item.getName()), "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindItemByName(output),
                 new ExitItem(output)
         };
-        new StartUI(output).init (in, tracker, actions);
+        new StartUI(output).init(in, tracker, actions);
         String ln = System.lineSeparator();
         assertThat(output.toString()).isEqualTo(
                 "Menu:" + ln
                         + "0. Find Item by mane" + ln
-                        + "1. Exit" + ln
-                        + "=== Find item by name ===" + ln
+                        + "1. Exit programme" + ln
+                        + "=== Find Item by name ===" + ln
                         + item + ln
                         + "Menu:" + ln
                         + "0. Find Item by mane" + ln
                         + "1. Exit programme" + ln
+                        + "=== Exit programme ===" + ln
         );
     }
 
@@ -173,6 +178,7 @@ class StartUITest {
                         + "Menu:" + ln
                         + "0. Find Item by id" + ln
                         + "1. Exit programme" + ln
+                        + "=== Exit programme ===" + ln
         );
     }
 }

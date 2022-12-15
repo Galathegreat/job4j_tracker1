@@ -14,14 +14,17 @@ public class FindItemByName implements UserAction {
 
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        out.println("=== Find Item by name===");
-        int id = input.askInt("Enter id search item by name: ");
-        Item item = tracker.findById(id);
-        if (item != null) {
-            out.println(item);
+        out.println("=== Find Item by name ===");
+        String name = input.askStr("Enter id search item by name: ");
+        Item[] items = tracker.findByName(name);
+        if (items.length > 0) {
+            for (Item item : items) {
+                out.println(item);
+            }
         } else {
-            out.println("The request with the entered name: " + id + " was not found.");
+                out.println("The request with the entered name: " + name + " was not found.");
+            }
+            return true;
         }
-        return true;
     }
-}
+
