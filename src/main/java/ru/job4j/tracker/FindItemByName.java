@@ -24,7 +24,7 @@ public class FindItemByName implements UserAction {
         } else {
                 out.println("The request with the entered name: " + name + " was not found.");
             }
-            return true;
+        return true;
         }
     }
 
