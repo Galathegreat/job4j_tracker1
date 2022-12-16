@@ -22,9 +22,9 @@ public class FindItemByName implements UserAction {
                 out.println(item);
             }
         } else {
-                out.println("The request with the entered name: " + name + " was not found.");
-            }
-        return true;
+            out.println("The request with the entered name: " + name + " was not found.");
         }
+        return true;
     }
+}
 
