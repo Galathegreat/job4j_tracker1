@@ -59,6 +59,7 @@ class StartUITest {
         assertThat(tracker.findById(item.getId())).isNull();
     }
 
+
     @Test
     public void whenExitItem() {
         Output out = new StubOutput();
