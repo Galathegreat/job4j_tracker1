@@ -17,11 +17,11 @@ public class FindItemById implements UserAction {
         out.println("=== Find Item by id ===");
         int id = input.askInt("Enter id search item by id: ");
         Item item = tracker.findById(id);
-        if (item != null) {
-            out.println(item);
-        } else {
+        if (null == item) {
             out.println("The request with the entered id: " + id + " was not found.");
+        } else {
+            out.println(item);
         }
-        return true;
+        return true ;
     }
 }
