@@ -22,6 +22,6 @@ public class FindItemById implements UserAction {
         } else {
             out.println(item);
         }
-        return true ;
+        return true;
     }
 }

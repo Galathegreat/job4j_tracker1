@@ -59,7 +59,6 @@ class StartUITest {
         assertThat(tracker.findById(item.getId())).isNull();
     }
 
-
     @Test
     public void whenExitItem() {
         Output out = new StubOutput();
@@ -179,7 +178,7 @@ class StartUITest {
                         + "0. Find Item by id" + ln
                         + "1. Exit programme" + ln
                         + "=== Find Item by id ===" + ln
-                        + "The request with the entered id: " + 1 + " was not found." + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find Item by id" + ln
                         + "1. Exit programme" + ln
@@ -187,4 +186,3 @@ class StartUITest {
         );
     }
 }
-
